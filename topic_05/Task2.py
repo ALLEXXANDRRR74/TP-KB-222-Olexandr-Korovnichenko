@@ -23,7 +23,12 @@ while True:
 		break
 
 	if currency in currencys:
-		money = float(input(f"Введіть суму в {currency}: "))
+		while True:
+			try:
+				money = float(input(f"Введіть суму в {currency}: "))
+				break
+			except:
+				print("Невірна сума")
 		converted = convert(money, currency)
 		print(f"{money} {currency} = {converted} UAH")
 	else:
