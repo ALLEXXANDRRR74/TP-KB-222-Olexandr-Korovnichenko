@@ -14,14 +14,18 @@ while True:
 	print(f"Комп'ютер: {pc_choice}")
 
 	if player_choice in choices:
+		win = {
+		    "камінь": "ножиці",
+		    "ножиці": "папір",
+		    "папір": "камінь"
+		}
+
 		if player_choice == pc_choice:
-			print("Нічия!")
-		elif (player_choice == "камінь" and pc_choice == "ножиці") or \
-			 (player_choice == "ножиці" and pc_choice == "папір") or \
-			 (player_choice == "папір" and pc_choice == "камінь"):
-			print("Перемога гравця")
+		    print("Нічия!")
+		elif win[player_choice] == pc_choice:
+		    print("Ви перемогли!")
 		else:
-			print("Перемога Комп'ютера")
+		    print("Комп'ютер переміг!")
 	else:
 		print("Ви ввели неіснуючий жест")
 
